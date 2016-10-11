@@ -105,7 +105,11 @@ public class ComplexNumberTest {
         // |(3 + -4i)| = 5
         // |(0 + 3i)| = 3
 
-        // TODO: Test schreiben
+        ComplexNumber a = new ComplexNumber(3, -4);
+        ComplexNumber b = new ComplexNumber(0, 3);
+
+        assertEquals(5, a.abs(), 0);
+        assertEquals(3, b.abs(), 0);
     }
 
     /**
