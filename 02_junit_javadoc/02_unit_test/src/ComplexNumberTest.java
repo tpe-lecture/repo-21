@@ -123,6 +123,13 @@ public class ComplexNumberTest {
         // (2 + -4i)^3 = (2 + -4i)*(2 + -4i)*(2 + -4i)
         // (2 + -4i)^6 = (7488 + -2816i)
 
-        // TODO: Test schreiben
+        ComplexNumber a = new ComplexNumber(2, -4);
+        ComplexNumber b = a.multiply(a);
+        ComplexNumber c = b.multiply(a);
+
+        assertEquals(a, a.power(1));
+        assertEquals(b, a.power(2));
+        assertEquals(c, a.power(3));
+        assertEquals(new ComplexNumber(7488, -2816), a.power(6));
     }
 }
