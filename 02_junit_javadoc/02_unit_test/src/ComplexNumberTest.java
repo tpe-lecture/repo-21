@@ -56,7 +56,7 @@ public class ComplexNumberTest {
 
         assertEquals(new ComplexNumber(14, 22), a.multiply(b));
         assertEquals(new ComplexNumber(-29, 29), c.multiply(d));
-        assertEquals(new ComplexNumber(8, -16), a.multiply(4));
+        assertEquals(new ComplexNumber(9, -16), a.multiply(4));
     }
 
     /**
