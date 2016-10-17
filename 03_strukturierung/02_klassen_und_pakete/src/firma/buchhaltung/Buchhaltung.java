@@ -1,4 +1,4 @@
-package Buchhaltung;
+package firma.buchhaltung;
 
 /**
  * Sammlung von Konten und Methoden, um Buchungen durchzuführen.

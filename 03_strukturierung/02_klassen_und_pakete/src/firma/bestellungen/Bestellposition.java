@@ -1,4 +1,4 @@
-package Bestellungen;
+package firma.bestellungen;
 
 /**
  * Eine Position der Bestellung.

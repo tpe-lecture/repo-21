@@ -1,4 +1,4 @@
-package Bestellungen;
+package firma.stammdaten;
 
 /**
  * Lieferant.

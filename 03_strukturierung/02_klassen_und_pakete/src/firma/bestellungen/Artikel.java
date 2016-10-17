@@ -1,4 +1,7 @@
-package Bestellungen;
+package firma.bestellungen;
+
+import firma.stammdaten.Lieferant;
+
 /**
  * Ein Artikel aus dem Angebot der Firma.
  */
