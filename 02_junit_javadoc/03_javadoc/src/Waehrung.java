@@ -40,6 +40,7 @@ public class Waehrung {
 
     /**
      * Rechnet die übergebene Währung mit Betrag in eine neue um.
+     *
      * @param betrag Betrag der umzurechnenden Währung
      * @param toWaehrung Gibt an was die Zielwährung sein soll
      * @return Betrag der umgerechneten Währung
@@ -50,6 +51,7 @@ public class Waehrung {
 
     /**
      * Getter methode für kurs.
+     *
      * @return aktueller Kurs
      */
     public int getKurs() {
@@ -58,6 +60,7 @@ public class Waehrung {
 
     /**
      * Getter methode für name.
+     *
      * @return name der Währung
      */
     public String getName() {
@@ -65,7 +68,8 @@ public class Waehrung {
     }
 
     /**
-     *Getter methode für kuerzel.
+     * Getter methode für kuerzel.
+     *
      * @return kürzel der Währung
      */
     public String getKuerzel() {
@@ -77,8 +81,7 @@ public class Waehrung {
      */
     @Override
     public String toString() {
-        return String.format("%s [%s] 1 %s = %.4f %s",
-                name, kuerzel, "$",
+        return String.format("%s [%s] 1 %s = %.4f %s", name, kuerzel, "$",
                 kurs / (double) TEILER, kuerzel);
     }
 
@@ -89,11 +92,9 @@ public class Waehrung {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result
-                + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + kurs;
-        result = prime * result
-                + ((kuerzel == null) ? 0 : kuerzel.hashCode());
+        result = prime * result + ((kuerzel == null) ? 0 : kuerzel.hashCode());
         return result;
     }
 
