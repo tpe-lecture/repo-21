@@ -39,10 +39,10 @@ public class Waehrung {
     }
 
     /**
-     * Rechnet die übergebene Währung mit Betrag in eine neue um.
+     * Umrechnung in eine andere Währung.
      *
      * @param betrag Betrag der umzurechnenden Währung
-     * @param toWaehrung Gibt an was die Zielwährung sein soll
+     * @param toWaehrung Zielwährung
      * @return Betrag der umgerechneten Währung
      */
     public long umrechnen(long betrag, Waehrung toWaehrung) {
