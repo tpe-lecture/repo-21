@@ -14,7 +14,7 @@ import de.smits_net.games.framework.sprite.Direction;
 public class AlienSprite extends AnimatedSprite {
 
     /** Geschwindigkeit des Alien X-Richtung. */
-    private static final int ALIEN_SPEED = 20;
+    private static final int ALIEN_SPEED = 5;
 
     /**
      * Neues Alien anlegen.
@@ -24,7 +24,7 @@ public class AlienSprite extends AnimatedSprite {
      */
     public AlienSprite(Board board, Point startPoint) {
         super(board, startPoint, BoundaryPolicy.JUMP_BACK, new AlienImage());
-        velocity.setVelocity(Direction.WEST, ALIEN_SPEED);
+        velocity.setVelocity(Direction.SOUTHWEST, ALIEN_SPEED);
     }
 
     /**
@@ -34,6 +34,6 @@ public class AlienSprite extends AnimatedSprite {
         setActive(false);
         setImages(new AnimatedImage(20,
                 new StripedImage("assets/explosion", 43)));
-        setInvisibleAfterFrames(70);
+        setInvisibleAfterFrames(50);
     }
 }

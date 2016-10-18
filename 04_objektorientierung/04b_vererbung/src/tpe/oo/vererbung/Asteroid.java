@@ -22,6 +22,6 @@ public class Asteroid extends Sprite {
     public Asteroid(Board board, Point startPoint) {
         super(board, startPoint, BoundaryPolicy.JUMP_BACK,
                 new ImagePack(ImageBase.loadImage("assets/asteroid")));
-        velocity.setVelocity(Direction.NORTHEAST, 5.0);
+        velocity.setVelocity(Direction.NORTHEAST, 3.0);
     }
 }
