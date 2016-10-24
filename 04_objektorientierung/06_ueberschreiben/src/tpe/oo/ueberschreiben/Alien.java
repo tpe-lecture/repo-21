@@ -24,9 +24,26 @@ public class Alien extends AnimatedSprite {
      */
     public Alien(Board board, Point startPoint) {
         super(board, startPoint, BoundaryPolicy.JUMP_BACK,
-                new AnimatedImage(50, 5,
-                        "assets/spike_fist_move_strip5.png"));
+                new AnimatedImage(50, 5, "assets/spike_fist_move_strip5.png"));
         velocity.setVelocity(Direction.WEST, ALIEN_SPEED);
+    }
+    /**
+     *
+     * @param board fdfg
+     * @param startPoint fgd
+     * @param direct  fgd
+     * @param speed dgdf
+     */
+    public Alien(Board board, Point startPoint, Direction direct, int speed) {
+        super(board, startPoint, BoundaryPolicy.JUMP_BACK,
+                new AnimatedImage(50, 5, "assets/spike_fist_move_strip5.png"));
+        velocity.setVelocity(direct, speed);
+    }
+/**
+ *
+ */
+    public void mousePressed() {
+        this.explode();
     }
 
     /**
