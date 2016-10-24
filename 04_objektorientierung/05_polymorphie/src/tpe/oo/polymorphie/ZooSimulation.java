@@ -29,13 +29,14 @@ public final class ZooSimulation {
         tiere[1] = new Gorilla("Buck");
         tiere[2] = new Giraffe("Debbie");
 
-        System.out.println("Fütterung...");
-        for (int i = 0; i < 3; i++) {
-            System.out.println(tiere[i]);
-            futterstelle.gibFutter(tiere[i]);
+
+        for (ZooTier tier :tiere) {
+            System.out.println(tier);
+            futterstelle.gibFutter(tier);
         }
-        for (int j = 0; j < 3; j++) {
-            System.out.println(tiere[j]);
+        System.out.println("Fütterung...");
+        for (ZooTier tier: tiere) {
+            System.out.println(tier);
         }
 
     }
