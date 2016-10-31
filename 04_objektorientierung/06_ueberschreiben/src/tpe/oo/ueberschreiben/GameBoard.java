@@ -31,8 +31,8 @@ public class GameBoard extends Board {
         background = ImageBase.loadImage("assets/background");
 
         // Alien initialisieren
-        for (Alien alien : aliens) {
-            alien = new Alien(this,
+        for (int j = 0; j < aliens.length; j++) {
+            aliens[j] = new Alien(this,
                     new Point(new Random().nextInt(400),
                             50 + new Random().nextInt(100)),
                     Direction.WEST, new Random().nextInt(5));
@@ -64,6 +64,15 @@ public class GameBoard extends Board {
     }
 
     /**
+     * Gibt an was das Spiel beim Ende anzeigen soll.
+     *
+     * @param g Graphics des Spiels
+     */
+    public void drawGameOver(Graphics g) {
+        centerText(g, "GAME OVER");
+    }
+
+    /**
      * Spielsituation updaten. Wird vom Framework aufgerufen.
      */
     @Override
@@ -74,15 +83,19 @@ public class GameBoard extends Board {
         return isVisible();
     }
 
+    /**
+     * Steuert die Game Loop durch rückgabe des boolean Wertes ob es noch Aliens
+     * gibt.
+     *
+     * @return Boolean wert der angibt ob es noch Aliens gibt
+     */
     public boolean isVisible() {
-        for (Alien alien : aliens) {
-            if (alien.isVisible()) {
+        for (int i = 0; i < aliens.length; i++) {
+            if (aliens[i].isVisible()) {
                 return true;
             }
-            else if(!alien.isVisible()){
-                return false;
-            }
         }
-
+        return false;
     }
+
 }
