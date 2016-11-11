@@ -25,19 +25,16 @@ public class FigurFactory {
     public Figur createFigur(Board b) {
         Figur figur;
         int i = rand.nextInt(4);
-        if (i < 1) {
-            figur = new Wizard(b);
+        switch (i) {
+            case 1:
+                return new Wizard(b);
+            case 2:
+                return new Ninja(b);
+            case 3:
+                return new Lady(b);
+            default:
+                return new Knight(b);
         }
-        else if (i < 2) {
-            figur = new Ninja(b);
-        }
-        else if (i < 3) {
-            figur = new Lady(b);
-        }
-        else {
-            figur = new Knight(b);
-        }
-        return figur;
     }
 
 }
