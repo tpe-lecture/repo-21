@@ -9,7 +9,13 @@ public class PersonenGesellschaft extends Unternehmen {
     }
 
     public int einkommenssteuer() {
+        return gewinn;
 
+    }
+
+    @Override
+    public int steuer() {
+        return 0;
     }
 
 }
