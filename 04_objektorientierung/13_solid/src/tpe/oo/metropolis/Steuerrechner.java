@@ -1,7 +1,7 @@
 package tpe.oo.metropolis;
 
 public class Steuerrechner {
-    public int gewSteuer(Steuerpflichtige x) {
+    public int gewSteuer(Steuerpflichtig x) {
         if (x instanceof PersonenGesellschaft) {
 
         }
@@ -9,7 +9,7 @@ public class Steuerrechner {
 
     }
 
-    public int körpSteuer(Steuerpflichtige[] x) {
+    public int körpSteuer(Steuerpflichtig[] x) {
         double steuern = 0;
         for (int i = 0; i < x.length; i++) {
             steuern += (((Schurken) x[i]).getEinkommen() * 0.15);
@@ -18,7 +18,7 @@ public class Steuerrechner {
 
     }
 
-    public int einkSteuer(Steuerpflichtige x) {
+    public int einkSteuer(Steuerpflichtig x) {
         double steuer = 0;
         int einkommen = ((Schurken) x).getEinkommen();
         if (einkommen >= 20000) {

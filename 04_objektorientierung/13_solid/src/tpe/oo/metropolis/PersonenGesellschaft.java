@@ -3,11 +3,19 @@ package tpe.oo.metropolis;
 public class PersonenGesellschaft extends Unternehmen {
     Bürger[] inhaber;
 
-    public static int gewinn = 0;
-
-    public void errechneGewinn() {
-        for (int i = 0; i < inhaber.length; i++) {
-gewinn+=inhaber[i].
-        }
+    public int gewerbesteuer() {
+        double steuer = (gewinn - 800) * STEUERSATZ;
+        return (int) steuer;
     }
+
+    public int einkommenssteuer() {
+        return gewinn;
+
+    }
+
+    @Override
+    public int steuer() {
+        return 0;
+    }
+
 }

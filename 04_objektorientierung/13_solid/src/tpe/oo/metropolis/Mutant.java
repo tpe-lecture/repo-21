@@ -4,7 +4,6 @@ public abstract class Mutant extends Einwohner {
     private String mutation;
 
     public Mutant(String name, String mutation) {
-        super(name);
         this.mutation = mutation;
     }
 
