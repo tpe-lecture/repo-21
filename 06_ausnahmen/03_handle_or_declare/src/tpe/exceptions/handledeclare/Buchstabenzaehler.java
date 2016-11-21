@@ -22,9 +22,9 @@ public class Buchstabenzaehler {
     public static void main(String[] args) throws StatistikException {
         Buchstabenzaehler bs = new Buchstabenzaehler();
 
-
-            bs.run();
+        bs.run();
     }
+
     /**
      * Startet den Buchstabenzaehler.
      *
@@ -32,7 +32,7 @@ public class Buchstabenzaehler {
      *             Buchstabenhäufigkeit.
      * @throws IOException Exception für IO Fehler
      */
-    private void run() throws StatistikException{
+    private void run() throws StatistikException {
         while (true) {
             System.out.print("Bitte geben Sie den Dateinamen an: ");
             Scanner scanner = new Scanner(System.in);
@@ -45,6 +45,9 @@ public class Buchstabenzaehler {
             catch (FileNotFoundException e) {
                 System.out.println("Datei nicht gefunden");
                 continue;
+            }
+            catch (IOException e) {
+                e.printStackTrace();
             }
 
             printStatistik(statistik);
