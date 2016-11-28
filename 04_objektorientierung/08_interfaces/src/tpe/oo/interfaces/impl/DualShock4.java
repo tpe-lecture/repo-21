@@ -6,7 +6,9 @@ import tpe.oo.interfaces.api.AnalogController;
 import tpe.oo.interfaces.api.DigitalController;
 
 public class DualShock4 implements DigitalController, AnalogController {
+    @SuppressWarnings("unused")
     private Point position = new Point(0, 0);
+    @SuppressWarnings("unused")
     private Point position2 = new Point(0, 0);
 
     private DigitalController dc = new DigitalControllerImpl();

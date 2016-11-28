@@ -1,8 +1,8 @@
 /**
- * Klasse, die eine komplexe Zahl repräsentiert. Sie unterstützt
- * grundlegende arithmetische Operationen.
+ * Klasse, die eine komplexe Zahl repräsentiert. Sie unterstützt grundlegende
+ * arithmetische Operationen.
  *
- *<p>
+ * <p>
  * Neue Instanzen werden mit Hilfe des Konstruktors erzeugt und initialisiert.
  *
  * <pre>
@@ -10,8 +10,8 @@
  * </pre>
  *
  * Die Klasse erlaubt es, komplexe Zahlen zu addieren, subtrahieren,
- * multiplizieren und zu dividieren. Weiterhin kann auch noch der
- * Betrag bestimmt werden.
+ * multiplizieren und zu dividieren. Weiterhin kann auch noch der Betrag
+ * bestimmt werden.
  * <p>
  * Objekte dieser Klasse sind immutable. Die Methoden verändern den Zustand des
  * Objektes nicht sondern geben ein neues Objekt zurück.
@@ -27,8 +27,8 @@ public class ComplexNumber {
     private double imaginaerAnteil;
 
     /**
-     * Erzeugt eine neue komplexe Zahl mit dem entsprechenden
-     * Real- und Imaginäranteil.
+     * Erzeugt eine neue komplexe Zahl mit dem entsprechenden Real- und
+     * Imaginäranteil.
      *
      * @param realAnteil Real-Anteil der Zahl
      * @param imaginaerAnteil Imaginär-Anteil der Zahl
@@ -48,8 +48,8 @@ public class ComplexNumber {
     }
 
     /**
-     * Addiert die gegebene komplexe Zahl zu dieser und gibt das
-     * Ergebnis als neue komplexe Zahl zurück.
+     * Addiert die gegebene komplexe Zahl zu dieser und gibt das Ergebnis als
+     * neue komplexe Zahl zurück.
      *
      * @param other die Zahl, die zu dieser addiert werden soll
      * @return das Ergebnis der Addition
@@ -60,8 +60,8 @@ public class ComplexNumber {
     }
 
     /**
-     * Addiert die gegebene reele Zahl zu dieser und gibt das
-     * Ergebnis als neue komplexe Zahl zurück.
+     * Addiert die gegebene reele Zahl zu dieser und gibt das Ergebnis als neue
+     * komplexe Zahl zurück.
      *
      * @param other die Zahl, die zu dieser addiert werden soll
      * @return das Ergebnis der Addition
@@ -71,8 +71,8 @@ public class ComplexNumber {
     }
 
     /**
-     * Subtrahiert die gegebene komplexe Zahl von dieser und gibt das
-     * Ergebnis als neue komplexe Zahl zurück.
+     * Subtrahiert die gegebene komplexe Zahl von dieser und gibt das Ergebnis
+     * als neue komplexe Zahl zurück.
      *
      * @param other die Zahl, die von dieser subtrahiert werden soll
      * @return das Ergebnis der Subtraktion
@@ -82,8 +82,8 @@ public class ComplexNumber {
     }
 
     /**
-     * Subtrahiert die gegebene reele Zahl von dieser und gibt das
-     * Ergebnis als neue komplexe Zahl zurück.
+     * Subtrahiert die gegebene reele Zahl von dieser und gibt das Ergebnis als
+     * neue komplexe Zahl zurück.
      *
      * @param other die Zahl, die von dieser subtrahiert werden soll
      * @return das Ergebnis der Subtraktion
@@ -93,8 +93,8 @@ public class ComplexNumber {
     }
 
     /**
-     * Multipliziert diese komplexe Zahl mit der gegebenen und gibt das
-     * Ergebnis als neue komplexe Zahl zurück.
+     * Multipliziert diese komplexe Zahl mit der gegebenen und gibt das Ergebnis
+     * als neue komplexe Zahl zurück.
      *
      * @param other die Zahl, die mit dieser multipliziert werden soll
      * @return das Ergebnis der Multiplikation
@@ -102,10 +102,10 @@ public class ComplexNumber {
     public ComplexNumber multiply(ComplexNumber other) {
 
         double r = this.realAnteil * other.realAnteil
-                 - this.imaginaerAnteil * other.imaginaerAnteil;
+                - this.imaginaerAnteil * other.imaginaerAnteil;
 
         double i = this.realAnteil * other.imaginaerAnteil
-                 + this.imaginaerAnteil * other.realAnteil;
+                + this.imaginaerAnteil * other.realAnteil;
 
         return new ComplexNumber(r, i);
     }
@@ -127,8 +127,8 @@ public class ComplexNumber {
      * Ergebnis als neue komplexe Zahl zurück.
      *
      * @param other die Zahl, durch die dividiert werden soll
-     * @return das Ergebnis der Division oder {@literal null} wenn der
-     *         Betrag der übergebenen Zahl 0 ist
+     * @return das Ergebnis der Division oder {@literal null} wenn der Betrag
+     *         der übergebenen Zahl 0 ist
      */
     public ComplexNumber divide(ComplexNumber other) {
 
@@ -137,15 +137,13 @@ public class ComplexNumber {
         }
 
         double n = other.realAnteil * other.realAnteil
-                 + other.imaginaerAnteil * other.imaginaerAnteil;
+                + other.imaginaerAnteil * other.imaginaerAnteil;
 
         double r = (this.realAnteil * other.realAnteil
-                         + this.imaginaerAnteil * other.imaginaerAnteil)
-                 / n;
+                + this.imaginaerAnteil * other.imaginaerAnteil) / n;
 
         double i = (this.imaginaerAnteil * other.realAnteil
-                 - this.realAnteil * other.imaginaerAnteil)
-                 / n;
+                - this.realAnteil * other.imaginaerAnteil) / n;
 
         return new ComplexNumber(r, i);
     }
@@ -161,15 +159,14 @@ public class ComplexNumber {
         return divide(new ComplexNumber(other));
     }
 
-
     /**
      * Liefert den Betrag der komplexen Zahl.
      *
      * @return Betrag der komplexen Zahl.
      */
     public double abs() {
-        return Math.sqrt(realAnteil * realAnteil
-                + imaginaerAnteil * imaginaerAnteil);
+        return Math.sqrt(
+                realAnteil * realAnteil + imaginaerAnteil * imaginaerAnteil);
     }
 
     /**
@@ -221,8 +218,7 @@ public class ComplexNumber {
     @Override
     public String toString() {
         return String.format("(%.2f %s %.2fi)", realAnteil,
-               imaginaerAnteil < 0.0 ? "-" : "+",
-               Math.abs(imaginaerAnteil));
+                imaginaerAnteil < 0.0 ? "-" : "+", Math.abs(imaginaerAnteil));
     }
 
     /**

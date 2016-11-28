@@ -6,5 +6,6 @@ package firma.buchhaltung;
 public class Buchhaltung {
 
     /** Konten der Firma. */
+    @SuppressWarnings("unused")
     private Konto[] konten;
 }

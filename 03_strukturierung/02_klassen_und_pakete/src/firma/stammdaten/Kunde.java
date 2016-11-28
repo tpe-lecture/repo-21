@@ -6,8 +6,10 @@ package firma.stammdaten;
 public class Kunde {
 
     /** Nummer des Kunden. */
+    @SuppressWarnings("unused")
     private String nummer;
-    
+
     /** Adresse des Kunden. */
+    @SuppressWarnings("unused")
     private Adresse adresse;
 }

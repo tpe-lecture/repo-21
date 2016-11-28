@@ -13,6 +13,10 @@ import de.smits_net.games.framework.board.Board;
  */
 public class GameBoard extends Board {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     /** Alien, das durch das Bild läuft. */
     private Alien alien;
 
@@ -25,6 +29,7 @@ public class GameBoard extends Board {
 
         // Alien initialisieren
         alien = new Alien(this, new Point(800, 50 + new Random().nextInt(100)));
+
     }
 
     /**
