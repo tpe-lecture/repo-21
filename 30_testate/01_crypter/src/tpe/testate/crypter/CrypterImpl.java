@@ -6,35 +6,43 @@ public class CrypterImpl implements Crypter {
 	public String encrypt(String input) {
 		String smallInput = input.toLowerCase();
 		String result = "";
+		/**
+		 * Schleife die durch den zu verschlüsselnden String läuft, wenn Char
+		 * übersetzbar wird er übersetzt, wenn nicht wird er übersprungen.
+		 */
 		for (int i = 0; i < input.length(); i++) {
-			char aktualChar = smallInput.charAt(i);
-			if (!(aktualChar >= 'a' && aktualChar <= 'z' || aktualChar >= '0' && aktualChar <= '9'
-					|| aktualChar == ' ')) {
-				throw new IllegalArgumentException();
-			} else if (aktualChar == ' ') {
+			char aktuellChar = smallInput.charAt(i);
+			/**
+			 * Überprüft ob der aktuelle Charakter nicht innerhalb des
+			 * vorgegebenene Bereichs ist, wenn ja wird er übersprungen.
+			 */
+			if (!(aktuellChar >= 'a' && aktuellChar <= 'z' || aktuellChar >= '0' && aktuellChar <= '9'
+					|| aktuellChar == ' ')) {
+
+			} else if (aktuellChar == ' ') {
 				result += ' ';
-			} else if (aktualChar == 'e') {
+			} else if (aktuellChar == 'e') {
 				result += '3';
-			} else if (aktualChar == '3') {
+			} else if (aktuellChar == '3') {
 				result += 'e';
-			} else if (aktualChar == 'l') {
+			} else if (aktuellChar == 'l') {
 				result += '1';
-			} else if (aktualChar == '1') {
+			} else if (aktuellChar == '1') {
 				result += 'l';
-			} else if (aktualChar == 'o') {
+			} else if (aktuellChar == 'o') {
 				result += '0';
-			} else if (aktualChar == '0') {
+			} else if (aktuellChar == '0') {
 				result += 'o';
-			} else if (aktualChar == 'a') {
+			} else if (aktuellChar == 'a') {
 				result += '4';
-			} else if (aktualChar == '4') {
+			} else if (aktuellChar == '4') {
 				result += 'a';
-			} else if (aktualChar == 't') {
+			} else if (aktuellChar == 't') {
 				result += '7';
-			} else if (aktualChar == '7') {
+			} else if (aktuellChar == '7') {
 				result += 't';
 			} else {
-				result += aktualChar;
+				result += aktuellChar;
 			}
 
 		}
@@ -44,11 +52,20 @@ public class CrypterImpl implements Crypter {
 
 	@Override
 	public String decrypt(String input) throws IllegalArgumentException {
-		if (input.equals(input.toLowerCase())) {
-			return encrypt(input);
-		} else {
-			throw new IllegalArgumentException();
+		/**
+		 * Überprüft jeden Char ob er zugelassen ist, falls dies nicht der Fall
+		 * ist wird eine Exception geworfen.
+		 */
+		for (int i = 0; i < input.length(); i++) {
+			char aktuellChar = input.charAt(i);
+			if ((aktuellChar >= 'a' && aktuellChar <= 'z' || aktuellChar >= '0' && aktuellChar <= '9'
+					|| aktuellChar == ' ')) {
+
+			} else {
+				throw new IllegalArgumentException();
+			}
 		}
+		return encrypt(input);
 	}
 
 }
