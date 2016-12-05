@@ -7,9 +7,8 @@ import java.util.Arrays;
  */
 public class Main {
 
-    private static final int[] ZAHLEN = {
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
-    };
+    private static final int[] ZAHLEN = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+            13, 14, 15, 16, 17, 18, 19, 20 };
 
     /**
      * Hauptmethode.
@@ -20,15 +19,15 @@ public class Main {
 
         NumberSelector s = new NumberSelector();
 
-        // TODO: Gerade Zaheln filtern
-        int[] gerade = null;
+        int[] gerade = s.filter((zahl) -> zahl % 2 == 0, ZAHLEN);
 
         System.out.println(Arrays.toString(gerade));
 
-        // TODO: Ungerade Zaheln filtern
-        int[] ungerade = null;
+        int[] ungerade = s.filter((zahl) -> zahl % 2 == 1, ZAHLEN);
 
         System.out.println(Arrays.toString(ungerade));
 
+        int[] modVier = s.filter((zahl) -> zahl % 4 == 0, ZAHLEN);
+        System.out.println(Arrays.toString(modVier));
     }
 }
