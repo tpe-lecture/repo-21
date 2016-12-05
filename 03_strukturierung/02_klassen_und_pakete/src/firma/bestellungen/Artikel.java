@@ -8,11 +8,14 @@ import firma.stammdaten.Lieferant;
 public class Artikel {
 
     /** Name des Artikels. */
+    @SuppressWarnings("unused")
     private String name;
-    
+
     /** Preis des Artikels. */
+    @SuppressWarnings("unused")
     private int preis;
-    
+
     /** Lieferanten des Artikels. */
+    @SuppressWarnings("unused")
     private Lieferant[] lieferanten;
 }

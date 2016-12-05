@@ -14,6 +14,10 @@ import tpe.oo.factory.figuren.FigurFactory;
  */
 public class GameBoard extends Board {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     /** Figur, die durch das Bild läuft. */
     private Figur[] figur = new Figur[10];
     private FigurFactory factory = new FigurFactory();

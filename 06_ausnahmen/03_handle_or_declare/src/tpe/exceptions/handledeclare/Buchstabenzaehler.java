@@ -38,7 +38,7 @@ public class Buchstabenzaehler {
             Scanner scanner = new Scanner(System.in);
             String dateiname = scanner.nextLine();
 
-            int[] statistik;
+            int[] statistik = null;
             try {
                 statistik = parseFile("assets/" + dateiname);
             }

@@ -23,7 +23,6 @@ public class FigurFactory {
      * @return Figur gibt eine der möglichen Figuren zurück.
      */
     public Figur createFigur(Board b) {
-        Figur figur;
         int i = rand.nextInt(4);
         switch (i) {
             case 1:

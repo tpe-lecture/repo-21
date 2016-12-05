@@ -15,8 +15,7 @@ public class Metropolis {
                 onox };
 
         Finanzamt finanz = new Finanzamt(steuerpflichtige);
-        System.out.println("Steuer: " + finanz.steuer()+ " Metrodollar");
+        System.out.println("Steuer: " + finanz.steuer() + " Metrodollar");
 
     }
-
 }
