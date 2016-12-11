@@ -62,10 +62,7 @@ public class CrypterImpl implements Crypter {
 				} else {
 					result += aktuellChar;
 				}
-			} else {
-
 			}
-
 		}
 		return result;
 
